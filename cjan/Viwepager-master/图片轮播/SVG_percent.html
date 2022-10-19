@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body style="background: #fff;">
+		<div id="circle" style="width: 300px;height: 300px;"></div>
+<!--		<svg width="500px" height="500px">
+		   <path d="M 120 10
+		  			A 110 110, 0, 1, 0, 120.1 10
+		  			L 120.1 50
+		  			A 70 70, 0, 1, 1, 120 50
+		           Z" fill="green"/>
+		  <path d="M 120 20
+		  			A 100 100, 0, 1, 0, 120.1 20
+		  			L 120.1 40
+		  			A 80 80, 0, 1, 1, 120 40
+		           Z" fill="#000"/>
+		</svg>-->
+	</body>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+	
+		function draw(persent, settings){
+			var a = Math.PI * 2 * persent / 100;
+			var _settings = {
+				domId : "circle",
+				trackWidth : 10,
+				trackColor : "#ace",
+				barWidth :　20,
+				barColor : '#1483d6'
+			}
+			var $dom = $("#" +　_settings.domId);
+			var $svg = $dom.find("svg");
+			var domwidth = parseInt($dom.width());
+			var _rTrack = domwidth / 2 * 0.8;
+			var _rBar = _rTrack + (_settings.barWidth - _settings.trackWidth)/2;
+			var _rTrack_inner = _rTrack - _settings.trackWidth;
+			var _rBar_inner = _rBar - _settings.barWidth;
+			
+			var mTracky = (_settings.barWidth - _settings.trackWidth)/2;
+			var mTrackx = domwidth / 2 + mTracky;
+			if($svg.length < 1){
+				var svgStr = "<svg style=\"width:100%;height:100%;\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"></svg>";
+				$dom.append(svgStr);
+				$svg = $dom.find("svg");
+				var d1 = "M " + mTrackx + " " + mTracky +
+			  			"A " + _rTrack + " " + _rTrack + ", 0, 1, 0, " + (mTrackx + 0.1) + " " + mTracky + 
+			  			"L " + (mTrackx + 0.1) + " " + (mTracky + _settings.trackWidth) + " " +
+			  			"A " + _rTrack_inner + " " + _rTrack_inner + ", 0, 1, 1, " + mTrackx + " " + (mTracky + _settings.trackWidth) + " " +
+			           	"Z";
+				var pathTrack = "<path d=\"" + d1 + "\" fill=\"" + _settings.trackColor + "\"/>";
+				$svg.html(pathTrack);
+			}
+			// 扇形外弧起点
+			var mBarx = mTrackx;
+			var mBary = 0;
+			// 扇形外弧终点
+			var outx2 = mBarx + _rBar * Math.sin(a);
+			var outy2 = mBary + _rBar - _rBar * Math.cos(a); 
+			// 扇形内弧起点
+			var innerx1 = mBarx + _rBar_inner * Math.sin(a);
+			var innery1 = mBary + _settings.barWidth + _rBar_inner - _rBar_inner * Math.cos(a);
+			// 扇形外弧终点
+			var innerx2 = mBarx;
+			var innery2 = mBary + _settings.barWidth;
+			var bigCircle = persent > 50 ? 1 : 0;
+			var d2 = "M " + mBarx + " " + mBary + " "+
+		  			"A " + _rBar + " " + _rBar + ", 0, " + bigCircle + ", 1, " + (outx2 - 0.1) + " "+ outy2 + " " + 
+		  			"L " + (innerx1 - 0.1) + " " + innery1 + " " +
+		  			"A " + _rBar_inner + " " + _rBar_inner + ", 0, " + bigCircle + ", 0, " + innerx2 + " " + innery2 + " " +
+		           	"Z";
+			var pathBar = "<path id=\"_barCircle\" d=\"" + d2 + "\" fill=\"" + _settings.barColor + "\"/>";
+			$svg.find("path").not($svg.find("path:first")).remove();
+			$svg.html($svg.html() + pathBar);
+		}
+		
+		$().ready(function(){
+//			alert(3.56.toFixed(1));
+			var p = 0;
+			var persent = 40;
+			var time = 1000;
+			var frames = time / 1000 * 60;
+			var framePersent = persent / frames;
+			var delay = 1000 / 60
+			var _draw = function(){
+				setTimeout(function(){
+					p = p + framePersent;
+					p = p > persent ? persent : p;
+					draw(p);
+					if(p < persent){
+						_draw();
+					}
+				}, delay);
+			};
+			_draw();
+		});
+	</script>
+</html>

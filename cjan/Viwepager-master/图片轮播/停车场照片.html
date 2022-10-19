@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>车机app</title>
+		<!-- <link href="css/style.css" rel="stylesheet" type="text/css" /> -->
+		<!-- <link href="css/css.css" rel="stylesheet" type="text/css" /> -->
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function(){
+			
+			})
+		</script>
+		<style>
+			/*@-webkit-keyframes myfirst 
+			{
+			0%   {background:red; left:0px;}
+			100%  {background:yellow; left:200px; }
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<section>
+			<header class='carParkTitle'>地上停车场</header>
+			<div class="carPark">
+			<div class="left">
+	            <button class="back">下一张</button>
+	            <button class="next">上一张</button>
+       		</div>-->
+				<div class="photo">
+					<ul>
+						<li>
+							<img src="http://f.hiphotos.baidu.com/image/w%3D400/sign=4bfd016aab773912c4268461c81b8675/908fa0ec08fa513d9b692b093f6d55fbb3fbd922.jpg" alt="" />
+						</li>
+						<li>
+							<img src="http://f.hiphotos.baidu.com/image/w%3D400/sign=4037f8cb41166d223877149476220945/e850352ac65c1038468fb1c2b0119313b07e8938.jpg" alt="" />
+						</li>
+						<li>
+							<img src="http://b.hiphotos.baidu.com/image/w%3D400/sign=cccc9cb24510b912bfc1f7fef3fcfcb5/72f082025aafa40f4a2615d4a964034f79f019d2.jpg" alt="" />
+						</li>
+						<li>
+							<img src="http://img0.bdstatic.com/img/image/43efdbdfc71d1d129a14c9023ed1e5ca1418016656.jpg" alt="" />
+						</li>
+						<li>
+							<img src="http://f.hiphotos.baidu.com/image/w%3D400/sign=4bfd016aab773912c4268461c81b8675/908fa0ec08fa513d9b692b093f6d55fbb3fbd922.jpg" alt="" />
+						</li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<script>
+					  var startx=0;
+			          var starty=0;
+					  var tx=0;
+			          var ty=0;
+			          var endx=0;
+			          var endy=0;
+			          var starttime;
+			          $(function(){
+			              var list=$('.photo ul');
+			              var liW=$('.photo li');
+			              var liwidth=liW.width();
+			              list.width(liwidth*liW.length);  
+			
+			              $('.back').click(function(){
+			                animates(liwidth);
+			              })
+			              $('.next').click(function(){
+			                animates(-liwidth);
+			              })
+			              function animates(liwidth){
+			                  if(parseInt(list.css('left')) == -(liwidth*(liW.length-1)) && liwidth > 0){
+			                    list.css('left',0);
+			                  } else if(parseInt(list.css('left')) == 0  && liwidth < 0){
+			                    list.css('left',(liwidth*(liW.length-1)));
+			                  }
+			                  
+			                list.animate({
+			                    left:parseInt(list.css('left'))-liwidth
+			                  });
+			              }
+			
+			
+			              document.addEventListener('touchstart',function(event){
+			              	  // 记录开始位置和时间
+			                  startx=event.touches[0].pageX;
+			                  starty=event.touches[0].pageY;
+			                  tx=event.touches[0].pageX;
+			                  ty=event.touches[0].pageY;
+			                  starttime = new Date(); 
+			              });
+			              
+			              document.addEventListener('touchmove',function(event){
+			              	  // 滑动距离和最新位置
+			                  var x=event.touches[0].pageX - tx;
+			                  var y=event.touches[0].pageY - ty;
+			                  tx = event.touches[0].pageX;
+			                  ty = event.touches[0].pageY;
+			                  //　轮播效果
+			                  list.css('left', (parseInt(list.css('left'))+x) + "px");
+			                  // 第一张和最后一张切换
+			                  var left = parseInt(list.css('left'));
+			                  if(left > 0){
+			                  	list.css('left', -liwidth*(liW.length-1) + left)
+			                  } else if(left < -liwidth*(liW.length-1)){
+			                  	list.css('left', liwidth*(liW.length-1) + left)
+			                  }
+			              });
+			              
+			              document.addEventListener('touchend',function(event){
+			              	  // 拖动距离
+			                  endx=event.changedTouches[0].pageX;
+			                  endy=event.changedTouches[0].pageY;
+			                  var deltax=endx - startx;
+			                  var deltay=endy - starty;
+			                  // 拖动方向
+							  var directionx = "";
+							  var directiony = "";
+							  directionx = deltax > 0 ? "right" : "left";
+							  directiony = deltay > 0 ? "down" : "up";
+								// 触摸时间
+							  var touchTime = new Date().getTime() - starttime.getTime();
+							  // 时间短时根据方向滑动，时间长时根据当前列表位置滑动
+			                  var rightLine = -parseInt(list.css('left')) + liW.width();
+			                  var leftPicsWidth = parseInt(rightLine / liW.width()) * liW.width();
+			                  var newLeft = 0;
+			                  if((touchTime < 200 && directionx == "left") || (touchTime > 200 && rightLine - leftPicsWidth > liW.width() / 2)){
+								newLeft = (-parseInt(rightLine / liW.width())) * liW.width();
+			                  } else if((touchTime < 200 && directionx == "right") ||  (touchTime > 200 && rightLine - leftPicsWidth <= liW.width() / 2)) {
+								newLeft = (-parseInt(rightLine / liW.width()) + 1) * liW.width();
+			                  }
+			                  list.animate({
+									left:newLeft
+								});
+			              })
+			          });
+				</script>
+			</div>
+		</section>
+	</body>
+
+</html>

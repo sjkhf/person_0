@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>关于我-个人博客</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<!-- 修改 -->
+
+
+<!--  -->
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+</head>
+<style>
+    .fu{
+        position: relative;
+        left: 0px;
+    }
+    .font1{
+        
+        width:40px ;
+        height: 30px;
+        color: rgba(238, 234, 4, 0.897);
+        margin-left: 10px;
+    }
+  .card-container {
+      position: relative;
+      margin: 0px auto;
+      width: 200px;
+      height: 100px;
+      left: 30px;
+      top: -20px;
+      
+  }
+  .nav1{
+    background-image: -webkit-linear-gradient(left,#fded04,#f5071a);
+    width:1000px;margin:20px auto; 
+  }
+  .card img{
+      display: block;
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+  }
+  .card h1 {
+      font-size: 2em;
+      font-weight: 600;
+      padding: 1em 0 0 1em;
+  }
+  .card-container .card {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .3s ease;
+      transition: all .3s ease;
+      border-radius: 15px;
+      cursor: pointer;
+  }
+  .card-container .card:nth-last-of-type(2) {
+      z-index: 90;
+  }
+  .card-container .card:nth-last-of-type(3) {
+      z-index: 150;
+  }
+  .card-container .card:nth-last-of-type(4) {
+      z-index: 180;
+  }
+  .card-container .card:nth-last-of-type(5) {
+      z-index: 150;
+  }
+  .card-container .card:first-of-type {
+      z-index: 90;
+  }
+  .card-container:hover .left1 {
+      -webkit-transform: scale(0.6) translateX(-200%);
+      transform: scale(0.6) translateX(-200%);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+  .card-container:hover .left2 {
+      -webkit-transform: scale(0.6) translateX(-200%);
+      transform: scale(0.6) translateX(-200%);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+  .card-container:hover .center1 {
+      -webkit-transform: scale(0.9) translateX(0);
+      transform: scale(0.9) translateX(0);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+  .card-container:hover .right1 {
+      -webkit-transform: scale(0.6) translateX(200%);
+      transform: scale(0.6) translateX(200%);
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+  .card-container:hover .right2 {
+      -webkit-transform: scale(0.6) translateX(200%);
+      transform: scale(0.6) translateX(200%);
+       box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+  .card-container:hover .last{
+      -webkit-transform: scale(0.6) translateX(200%);
+      transform: scale(0.6) translateX(200%);
+      display: none;
+  }
+  .click_left{
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      z-index: 200;
+      left: -50px;
+  }
+  .click_right{
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      z-index: 200;
+      right: -50px;
+  }
+  .daohang{
+      position: absolute;
+      z-index: 500;
+      left: 150px;
+      bottom: 0;
+  }
+  ol{
+      text-align: center;
+  }
+  ul{
+    background-image: -webkit-linear-gradient(left,#6a9fe4,#22e408);
+  }
+  #nav ul li{
+      list-style: none;
+      float: left;
+      border: #fc0;
+      font-size: 30px;
+      background-image: -webkit-linear-gradient(left,#6a9fe4,#22e408);
+      cursor: pointer;
+  }
+  ol li.current{
+      background: #0f0;
+  }
+  #nav ul li a{
+    color:#506274;font-size:16px;width:140px;height:30px;display:block;
+}
+
+</style>
+
+<body>
+    <div class="box1">
+      <!--header start-->
+      <div class="fu">
+    <div id="header">
+      <h1>周丕醍的个人博客</h1>
+      <p>命运如同海风，吹着青春的舟，飘摇着时光的海。</p>    
+    </div>
+     <!--header end-->
+     <!-- anim -->
+     <div style="width: 900px;height: 120px;border: 3px solid #3f0d0d;overflow: hidden;margin: 0 auto;border-radius: 5px;">
+        <div class="font1">
+            <h1>轮播图</h1>
+        </div>
+      <div class="card-container">
+          <div class="click_left"></div>
+          <div class="click_right"></div>
+          <div class="card left1">
+              <img src="./img/34.jpg">
+          </div>
+          <div class="card left2">
+            <img src="./img/08.jpg">
+        </div>
+          <div class="card center1">
+              <img src="./img/86.jpg">
+          </div>
+          <div class="card right1">
+              <img src="./img/8b.jpg">
+          </div>
+          <div class="card right2">
+            <img src="./img/2az.jpg">
+        </div>
+        
+          <div class="card last" style="display: none;">
+              <h1>last</h1>
+          </div>
+          
+      </div>
+  </div>
+     <!-- animi -->
+    <!--nav-->
+     <div id="nav">
+        
+         <ul>
+            
+         <li><a href="index.html">首页</a></li>
+         <li><a href="about.html">关于我</a></li>
+         <li><a href="shuo.html">洗脑鸡汤</a></li>
+         <li><a href="riji.html">个人日记</a></li>
+         <li><a href="learn.html">学无止境</a></li>
+         <li><a href="guestbook.html">留言板</a></li>
+         <div class="clear"></div>
+        </ul>
+    
+      </div>
+       <!--nav end-->
+       
+    <!--content start-->
+    <div id="content">
+       <!--left-->
+         <div class="left" id="about_me">
+           <div class="weizi">
+           <div class="wz_text">当前位置：<a href="index.html">首页</a>><h1>关于我</h1></div>
+           </div>
+           <div class="about_content">
+             博主是一位IT爱好者，喜欢研究web前端技术。
+           </div>
+         </div>
+         <!--end left -->
+         <!--right-->
+          <div class="right" id="c_right">
+          <div class="s_about">
+         <h2>关于博主</h2>
+           <div class="pic"><img src="./img/t01bb8c7dcfb65e36a7.jpg" width="150" height="150" alt="博主"/></div>
+		   <div class="name"><p>只 若 初 见</p></div>
+           <p>博主：周丕醍</p>
+           <p>职业：web前端学习者</p>
+           <p>简介：web爱好者喜欢专研新知识</p>
+        
+             
+          </div>
+          <!--栏目分类-->
+           <div class="lanmubox">
+              <div class="hd">
+               <ul><li>精心推荐</li><li>最新文章</li><li class="hd_3">随机文章</li></ul>
+              </div>
+              <div class="bd">
+                <ul>
+					<li><a href="#" title="网站项目实战开发（-）">网站项目实战开发（-）</a></li>
+					<li><a href="#" title="关于响应式布局">关于响应式布局</a></li>
+					<li><a href="#" title="如何创建个人博客网站">如何创建个人博客网站</a></li>
+					<li><a href="#" title="网站项目实战开发（二）">网站项目实战开发（二）</a></li>
+					<li><a href="#" title="为什么新站前期排名老是浮动？(转)">为什么新站前期排名老是浮动？(转)</a></li>
+				</ul>
+                 <ul>
+					<li><a href="#" title="网站项目实战开发（-）">网站项目实战开发（-）</a></li>
+					<li><a href="#" title="关于响应式布局">关于响应式布局</a></li>
+					<li><a href="#" title="如何创建个人博客网站">如何创建个人博客网站</a></li>
+					<li><a href="#" title="网站项目实战开发（二）">网站项目实战开发（二）</a></li>
+					<li><a href="#" title="为什么新站前期排名老是浮动？(转)">为什么新站前期排名老是浮动？(转)</a></li>
+				</ul>
+                 <ul>
+					<li><a href="#" title="网站项目实战开发（-）">网站项目实战开发（-）</a></li>
+					<li><a href="#" title="关于响应式布局">关于响应式布局</a></li>
+					<li><a href="#" title="如何创建个人博客网站">如何创建个人博客网站</a></li>
+					<li><a href="#" title="网站项目实战开发（二）">网站项目实战开发（二）</a></li>
+					<li><a href="#" title="为什么新站前期排名老是浮动？(转)">为什么新站前期排名老是浮动？(转)</a></li>
+				</ul>
+                 
+                
+              </div>
+           </div>
+           <!--end-->
+         </div>
+         <!--end  right-->
+         <div class="clear"></div>
+         
+         
+    </div>
+    <!--content end-->
+    <!--footer-->
+    <div id="footer">
+     <p>Design by:伪文艺少女 2015-9-6</p>
+    </div>
+    <!--footer end-->
+    <script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
+    <script  type="text/javascript" src="js/nav.js"></script>
+    </div>
+</div>   
+</body>
+<script>
+  $(document).ready(function () {
+      var leftslide=$(".card-container .click_left");
+      var rightslide=$(".card-container .click_right");
+      function lunbo() {
+          leftslide.click(function () {
+              $(".card-container .center1").removeClass("center1").addClass("last");
+              $(".card-container .left1").removeClass("left1").addClass("center1");
+              $(".card-container .left2").removeClass("left2").addClass("left1");
+              $(".card-container .right1").removeClass("right1").addClass("left2");
+              $(".card-container .right2").removeClass("right2").addClass("right1");
+              $(".card-container .last").removeClass("last").addClass("right2");
+          });
+          rightslide.click(function () {
+              $(".card-container .center1").removeClass("center1").addClass("last");
+              
+               $(".card-container .left1").removeClass("left1").addClass("center1");
+              $(".card-container .left2").removeClass("left2").addClass("left1");
+             $(".card-container .right1").removeClass("right1").addClass("left2");
+              $(".card-container .right2").removeClass("right2").addClass("right1");
+              
+              $(".card-container .last").removeClass("last").addClass("right2");
+          });
+      }
+      lunbo();
+  })
+</script>
+
+<script>
+  $(document).ready(function(){
+      var _now=0;
+      var oul=$(".myslidetwo");
+      var numl=$(".daohang ol li");
+      var ali=$(".myslide").eq(0).width();
+      numl.click(function(){
+          var index=$(this).index();
+          $(this).addClass("current").siblings().removeClass();
+          oul.animate({'left':-ali*index},500);
+      });
+      setInterval(function(){
+          if(_now==numl.size()-1){
+              _now=0;
+          }else{
+              _now++;
+          }
+          numl.eq(_now).addClass("current").siblings().removeClass();
+          oul.animate({'left':-ali*_now},600);
+      },2000)
+  });
+</script>
+</html>
+

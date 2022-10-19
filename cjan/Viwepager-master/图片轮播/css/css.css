@@ -1,0 +1,117 @@
+
+li{list-style: none;}
+.carParkTitle{height: 45px;line-height: 45px;font-size: 20px;margin-bottom: 40px;color: #fff;background: #1e3944;text-align: center;}
+.mapTitle{height: 80px;line-height: 80px;font-size: 30px;color: #fff;background: #1e3944;text-align: center;}
+.phoneTitle{height: 106px}
+.carPark .left {padding:0 38px;width: auto;}
+button.back,button.startNavigation{display: block;padding-top:40px;width: 94px;height: 66px;border-radius: 10px;border:none;font:14px '宋体';color: #fff;margin-bottom: 25px;}
+.back{background:#002236 url(../images/icon.png) no-repeat 28px 9px;}
+.startNavigation{background:#1981c4 url(../images/icon.png) no-repeat 28px -80px;}
+.mapTitle .back{position: absolute;background: #002236 url(../images/icon.png) no-repeat 28px 9px;top: 7px;left: 20px;}
+.phoneTitle .back{position: relative;background: #002236 url(../images/icon.png) no-repeat 28px 9px;top: 40px;left:74px;}
+.carPark .right{width: 488px;}
+.carPark li{height: 50px;background: #002236;margin-bottom: 2px;line-height: 50px;font-size: 16px;color: #fff;padding-left: 26px}
+.carPark li a{float: right;display: block;width: 94px;height: 33px;border-radius: 10px;border:none;background:#1981c4;line-height: 32px;color: #fff;text-align: center;font-size: 16px;text-decoration: none;margin-top: 9px;margin-right: 40px;}
+.icon{display: inline-block;width: 40px;height:40px;background: url(../images/icon.png) no-repeat;vertical-align: middle;}
+.icon-address{background-position: -124px 0}
+.icon-parkingSpace{background-position: -124px -53px}
+.icon-lock{background-position: -124px -106px}
+.icon-phone{background-position: -124px -156px}
+.icon-money{background-position: -124px -208px}
+.phone{padding: 14px 72px;}
+.phone ul{float: left;width: 270px;}
+.phone li{float:left;width: 88px;height: 78px;background: #002236;margin:1px;color: #1981c4;text-align: center;font-size: 40px;line-height: 78px}
+.phone li.phoneReset{font-size: 20px;}
+.phone li.rollback{font-size: 20px;background:#002236 url(../images/rollback.png) no-repeat center;text-indent: 10px;line-height: 74px;}
+.call{float: left;padding: 5px;width: 367px;height: 308px;background: #002236;}
+.editNumber{padding: 15px;width: 337px;height: 170px;font-size: 30px;color: #fff;background: #000;}
+.call button{border:none;display: block;width: 181px;height: 64px;border-radius: 10px;margin: 25px auto 0;text-align: center;;line-height: 64px;font-size: 32px;color: #fff;font-family: 微软雅黑;background-size: 110%;}
+.dial{background: #009944}
+.hang{background: red}
+.hang .icon-phone{background-position: right -180px;background-size: 456%;}
+.hang .icon-phone{background-position: right -180px;background-size: 456%;transform:rotate(135deg);}
+
+.photo{float: left;padding:10px;height: 290px;width: 494px;background: #002236;overflow: hidden;}
+.photo ul{position: relative;transition:-webkit-transform 3s ease-in;left:0;
+    /* Safari and Chrome:
+-webkit-animation-name:myfirst;
+-webkit-animation-duration:2s;
+-webkit-animation-timing-function:ease-in-out;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:alternate;
+-webkit-animation-play-state:running; */
+}
+.photo li{float: left;width: 494px;height: 290px;padding: 0;}
+.photo img{display: block;width: 494px;height: 290px;}
+
+
+
+
+/*弹窗loading*/
+.pop{
+    position: absolute;
+    width: 574px;
+    height: 226px;
+    background: #002236;
+} 
+.pop p{font-size: 26px;color:#fff;text-align: center;}
+.loading .loader {
+font-size: 10px;
+margin:30px auto;
+text-indent: -9999em;
+width: 8em;
+height: 8em;
+border-radius: 50%;
+background: #ffffff;
+background: -moz-linear-gradient(left, #e09022 10%, rgba(255, 255, 255, 0) 42%);
+background: -webkit-linear-gradient(left, #e09022 10%, rgba(255, 255, 255, 0) 42%);
+background: -o-linear-gradient(left, #e09022 10%, rgba(255, 255, 255, 0) 42%);
+background: -ms-linear-gradient(left, #e09022 10%, rgba(255, 255, 255, 0) 42%);
+background: linear-gradient(to right, #e09022 10%, rgba(255, 255, 255, 0) 42%);
+position: relative;
+-webkit-animation: loading 1.4s infinite linear;
+animation: loading 1.4s infinite linear;
+}
+.loading .loader:before {
+width: 50%;
+height: 50%;
+background: #e09022;
+border-radius: 100% 0 0 0;
+position: absolute;
+top: 0;
+left: 0;
+content: '';
+}
+.loading .loader:after {
+background: #002236;
+width: 75%;
+height: 75%;
+border-radius: 50%;
+content: '';
+margin: auto;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+}
+@-webkit-keyframes loading {
+0% {
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+}
+100% {
+-webkit-transform: rotate(360deg);
+transform: rotate(360deg);
+}
+}
+@keyframes loading {
+0% {
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+}
+100% {
+-webkit-transform: rotate(360deg);
+transform: rotate(360deg);
+}
+}  

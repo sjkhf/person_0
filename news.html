@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>浅谈：web前端基础操作-个人博客</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+      <!--header start-->
+    <div id="header">
+      <h1>周丕醍的个人博客</h1>
+      <p>青春是打开了,就合不上的书。人生是踏上了，就回不了头的路，爱情是扔出了，就收不回的赌注。</p>    
+    </div>
+     <!--header end-->
+    <!--nav-->
+     <div id="nav">
+         <ul>
+         <li><a href="index.html">首页</a></li>
+         <li><a href="about.html">关于我</a></li>
+         <li><a href="shuo.html">洗脑鸡汤</a></li>
+         <li><a href="riji.html">个人日记</a></li>
+         <li><a href="learn.html">学无止境</a></li>
+         <li><a href="guestbook.html">留言板</a></li>
+         <div class="clear"></div>
+        </ul>
+      </div>
+       <!--nav end-->
+    <!--content start-->
+    <div id="content">
+       <!--left-->
+         <div class="left" id="news">
+           <div class="weizi">
+           <div class="wz_text">当前位置：<a href="index.html">首页</a>><a href="learn.html">学无止境</a>><span>文章内容</span></div>
+           </div>
+           <div class="news_content">
+                  <div class="news_top">
+                    <h1>浅谈：web前端基础操作</h1>
+                    <p>
+                      <span class="left sj">时间:2015-10-9</span><span class="left fl">分类:学无止境</span>
+                      <span class="left author">周丕醍</span>
+                    </p>
+                    <div class="clear"></div>
+                  </div>
+                    <div class="news_text">
+                  <p>java解析xml的方式
+                    SAX(Simple APT for XML) - 常用于移动设备Android
+                    基于事件的逐行扫描文档,边扫描边解析,只在读时检查数据,不需要把全数据加载到内存中,对于大型文档解析有优势
+                    DOM(Document Object Model) - 文档对象模型
+                    数据全部存到内存中解析,速度快,dom4j组件方式解析常用
+                    ————————————————
+                    </p>
+                      <p>HTML(超文本标记语言)
+                        扩展名为.html或.htm
+                        内容不区分大小写
+                        标签建议成对出现
+                        嵌套顺序正确,一个根标签
+                        标签具有固定含义: 可视化和功能性</p>
+<p>JS(JavaScript)(Java脚本)</p>
+<p>一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型
+  特点:
+  与html和css结合客户端的技术
+  能够动态修改html,css中的属性等内容,形成动态效果
+  解释型语言
+  区分大小写
+  弱类型的语言
+<html xmlns="http://www.w3.org/1999/xhtml">
+  JSON(JS对象简谱) </p>
+<p>JS对象标记,JavaScript Object Notation,可以当做字符串传输,能被java,python等多种语言处理,通用性高</p>
+<p>2.格式</p>
+<p>json对象:
+  {key:value,key:value,key:value}</p>
+<p>json数组:
+{{key:value,key:value,key:value},{key:value,key:value,key:value}}
+// 可以通过json对象的属性名获得相应的值
+s['xage']=26;//修改xage的值为26
+console.log(s['xname']+","+s2['tsex']); //打印对应值
+       for...in:遍历语句
+        //遍历json数组s[]
+        for(var i in s){
+            console.log("i:"+i+",type:"+typeof(i)+","+s[i]);
+        }
+</p>
+<p>java向js传输的是json格式的字符串,要转换成json对象才能被js使用。</p>
+<p>JSP(java server page)(Java服务器界面)
+  由servlet改编而成,用静态的html去嵌套jsp脚本,完成动态数据的显示
+  /src/main/webapp下创建.jsp文件</p>
+                    </div>
+           </div>
+     
+         </div>
+         <!--end left -->
+         <!--right-->
+          <div class="right" id="c_right">
+          <div class="s_about">
+        <h2>关于博主</h2>
+           <div class="pic"><img src="./img/t01bb8c7dcfb65e36a7.jpg" width="150" height="150" alt="博主"/></div>
+		   <div class="name"><p>只 若 初 见</p></div>
+           <p>博主：周丕醍</p>
+           <p>职业：web前端学习者</p>
+           <p>简介：web爱好者喜欢专研新知识</p>
+          </div>
+          <!--栏目分类-->
+           <div class="lanmubox">
+              <div class="hd">
+               <ul><li>精心推荐</li><li>最新文章</li><li class="hd_3">随机文章</li></ul>
+              </div>
+              <div class="bd">
+                <ul>
+					<li><a href="#" title="网站项目实战开发（-）">网站项目实战开发（-）</a></li>
+					<li><a href="#" title="关于响应式布局">关于响应式布局</a></li>
+					<li><a href="#" title="如何创建个人博客网站">如何创建个人博客网站</a></li>
+					<li><a href="#" title="网站项目实战开发（二）">网站项目实战开发（二）</a></li>
+					<li><a href="#" title="为什么新站前期排名老是浮动？(转)">为什么新站前期排名老是浮动？(转)</a></li>
+				</ul>
+                 <ul>
+					<li><a href="#" title="网站项目实战开发（-）">网站项目实战开发（-）</a></li>
+					<li><a href="#" title="关于响应式布局">关于响应式布局</a></li>
+					<li><a href="#" title="如何创建个人博客网站">如何创建个人博客网站</a></li>
+					<li><a href="#" title="网站项目实战开发（二）">网站项目实战开发（二）</a></li>
+					<li><a href="#" title="为什么新站前期排名老是浮动？(转)">为什么新站前期排名老是浮动？(转)</a></li>
+				</ul>
+                 <ul>
+					<li><a href="#" title="网站项目实战开发（-）">网站项目实战开发（-）</a></li>
+					<li><a href="#" title="关于响应式布局">关于响应式布局</a></li>
+					<li><a href="#" title="如何创建个人博客网站">如何创建个人博客网站</a></li>
+					<li><a href="#" title="网站项目实战开发（二）">网站项目实战开发（二）</a></li>
+					<li><a href="#" title="为什么新站前期排名老是浮动？(转)">为什么新站前期排名老是浮动？(转)</a></li>
+				</ul>
+                 
+                
+              </div>
+           </div>
+           <!--end-->
+		   <div class="link" style="height:98px">
+            <h2>友情链接</h2>
+            <p><a href="https://github.com/ybqq1/guimeishopping.git">博主的github</a></p>
+           </div>   
+         </div>
+         <!--end  right-->
+         <div class="clear"></div>
+         
+    </div>
+    <!--content end-->
+    <!--footer-->
+    <div id="footer">
+     <p>Design by:周丕醍的个人博客 2015-9-6</p>
+    </div>
+    <!--footer end-->
+    <script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
+    <script  type="text/javascript" src="js/nav.js"></script>
+</body>
+</html>
+
+
